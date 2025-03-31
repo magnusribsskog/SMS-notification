@@ -1,24 +1,92 @@
-# SMS Notification Integration
 
-This repository integrates the Microsoft Bookings API with Link Mobility for SMS notifications.
+# Microsoft Bookings SMS Reminder System
 
-## Setup
+## Overview
+Automated reminder system that sends SMS via Link Mobility for upcoming Microsoft Bookings appointments.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/magnusribsskog/SMS-notification.git
+**Status**: Development Complete → Ready for Production Integration
 
-## Dependencies 
+## Key Achievements
+✅ Tentative integration with Microsoft Graph API  
+✅ Reliable SMS delivery via Link Mobility  
+✅ Prevention of duplicate reminders through notes field tracking  
+✅ Expandable test suite (100% pass rate)  
 
-bash
+## Security Implementation
 
-cd sms-safe/bookings
-python3 -m venv .venv  # Create a virtual environment
-source .venv/bin/activate  # Activate the virtual environment
-pip install -r requirements.txt  # Install dependencies
+### Credential Management
+- All secrets stored in `.env` (never committed to version control)
+- Azure credentials require minimal necessary permissions:
+  ```plaintext
+  Bookings.Read.All
+  BookingsAppointment.ReadWrite.All
 
-## Create your .env file: Copy env_template.txt to .env and fill in the relevant values:
+Audit Trail
+SMS sends logged via notes field updates:
 
-bash
+plaintext
+Copy
+SMS_SENT_2024-02-20T14:30:00Z
 
-cp env_template.txt .env
+***Test Results***
+
+## Validation Summary
+
+### Test Environment
+- Python 3.12
+- Mocked Microsoft Graph API
+- Link Mobility test credentials
+
+### Results
+| Test Type       | Cases | Passed | Notes |
+|-----------------|-------|--------|-------|
+| Unit            | 3     | 3      | Core logic validation |
+| Integration     | 1     | 1      | End-to-end flow (mocked) |
+| Live SMS        | 1     | 1      | Actual delivery confirmed |
+
+### Evidence
+- SMS Received through the Live SMS integration test that sends test information through .mock
+
+***Deployment***
+
+## Production Readiness Checklist
+
+### Azure Configuration
+1. Create dedicated service account in Azure AD
+2. Grant API permissions:
+   - Bookings.Read.All
+   - BookingsAppointment.ReadWrite.All
+3. Generate client secret with 6-month rotation
+
+### Environment Requirements
+
+Consult the template text for the .env requirements
+
+***System info for the development platform***  
+WSL Ubuntu on windows 10  
+Distributor ID: Ubuntu  
+Description:    Ubuntu 24.04.2 LTS  
+Release:        24.04  
+Codename:       noble  
+
+***Setup***  
+Use default python (3.12)  
+
+bash 
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+***Install Verified Packages***  
+
+bash  
+```
+pip install \
+    azure-identity==1.15.0 \
+    msgraph-core==0.2.2 \
+    python-dotenv==1.0.0 \
+    requests==2.31.0
+```
+
+
+
