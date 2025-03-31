@@ -1,0 +1,19 @@
+##MS Products Keys
+
+AZURE_TENANT_ID=
+AZURE_CLIENT_ID=
+AZURE_CLIENT_SECRET=
+BOOKINGS_BUSINESS_ID=
+
+
+## Link Mobility Credentials (From Partner Portal)
+LINK_MOBILITY_API_KEY=20_digit_key	#Referenced in their e-mail instructions as the password you recover 'once'
+LINK_MOBILITY_USERNAME="In_email_from_link_mobility"			
+PLATFORM_ID="SMS"
+PLATFORM_PARTNER_ID="In_email_from_link_mobility"
+SMS_SENDER_ID="Your_Business_name"			#Set "Sender name" used to identify you as the sender in the SMS display of SMS recipient
+
+# For integration testing only
+YOUR_TEST_NUMBER=+47real_number  # Keep this private!
+
+LIVE_SMS_TEST=false  # Set to "true" to enable live tests
