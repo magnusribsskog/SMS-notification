@@ -31,7 +31,7 @@ class SMSClient:
             "Content-Type": "application/json"
         }
         payload = {
-            "source": "Red Cross",
+            "source": "Display_Name_For_the_SMS",
             "sourceTON": "ALPHANUMERIC",
             "destination": phone,
             "destinationTON": "MSISDN",
