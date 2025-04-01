@@ -4,10 +4,10 @@
 ## Overview
 Automated reminder system that sends SMS via Link Mobility for upcoming Microsoft Bookings appointments.
 
-**Status**: Development Complete pending Production Integration
+**Status**: Development suspended pending Production Integration with a real MS Bookings page
 
 ## Key Achievements
-✅ Tentative integration with Microsoft Graph API  
+✅ Tentative integration with Microsoft Graph API calls using .mock  
 ✅ Reliable SMS delivery via Link Mobility  
 ✅ Prevention of duplicate reminders through notes field tracking  
 ✅ Expandable test suite (100% pass rate)  
@@ -25,7 +25,7 @@ Audit Trail
 SMS sends logged via notes field updates:
 
 plaintext
-Copy
+
 SMS_SENT_2024-02-20T14:30:00Z
 
 ***Test Results***
