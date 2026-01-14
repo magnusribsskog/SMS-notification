@@ -1,6 +1,6 @@
 import os
 import logging
-from datetime import datetime, timedelta, timezone  # Fixed timezone import
+from datetime import datetime, timedelta, timezone 
 from dotenv import load_dotenv
 from azure.identity import ClientSecretCredential
 from msgraph.core import GraphClient
@@ -47,7 +47,7 @@ class SMSSender:
                 if "SMS_SENT" not in appt.get('notes', ''):
                     self.sms_client.send_sms(
                         sms_number,
-                        f"Påminnelse: kl {appt['startDateTime'][11:16]}"  # Removed serviceName
+                        f"Påminnelse: kl {appt['startDateTime'][11:16]}"  
                     )
                     self.update_notes(appt)
             except KeyError as e:
