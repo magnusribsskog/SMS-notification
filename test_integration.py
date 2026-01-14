@@ -1,6 +1,6 @@
 import os
 import unittest
-from unittest.mock import patch, MagicMock  # Corrected import
+from unittest.mock import patch, MagicMock
 from dotenv import load_dotenv
 from sms_sender import SMSSender
 
